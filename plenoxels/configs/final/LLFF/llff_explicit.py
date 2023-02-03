@@ -5,7 +5,8 @@ config = {
 
     # Data settings
     "data_downsample": 4,
-    "data_dirs": ["data/LLFF/fortress"],
+    #"data_dirs": ["data/LLFF/fortress"],
+    "data_dirs": ["llff1/fortress"],
     # Data settings for LLFF
     "hold_every": 8,
     "contract": False,
