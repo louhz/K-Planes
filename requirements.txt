@@ -9,3 +9,4 @@ imageio
 torchmetrics
 scikit-image
 tinycudann
+tensorboard

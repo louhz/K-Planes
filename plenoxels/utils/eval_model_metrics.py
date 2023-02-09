@@ -86,10 +86,10 @@ def eval_video_metrics(video_path):
     print()
 
 
-dnerf_scenes = ['hellwarrior', 'mutant', 'hook', 'bouncingballs', 'lego', 'trex', 'standup', 'jumpingjacks']
+dnerf_scenes = ['hellwarrior', 'mutant', 'hook', 'bouncingballs', 'lego', 'trex', 'standup', 'jumpingjacks','zjuhuman']
 types = ['linear', 'mlp']
 
 if __name__ == "__main__":
     for modeltype in types:
         for scene in dnerf_scenes:
-            eval_video_metrics(f"logs/dnerf_{modeltype}_refactor1/{scene}_concat32_lr0.01_time0.1_tv0.0001_proptime0.001_proptv0.0001_distort0/step30000.mp4")
+            eval_video_metrics(f"logs/dnerf_{modeltype}_refactor1/{scene}_concat32_lr0.01_time0.1_tv0.0001_proptime0.001_proptv0.0001_distort0/step20000.mp4")
