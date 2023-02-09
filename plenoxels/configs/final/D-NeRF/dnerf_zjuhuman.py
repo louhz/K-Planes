@@ -59,11 +59,11 @@ config = {
  # Hell Warrior and Hook: 50 (100 frames)
  # Mutant, Bouncing Balls, and Stand Up: 75 (150 frames)
  # T-Rex	and Jumping Jacks: 100 (200 frames)
- # zjuhuman: 150 (300 frames)
+ # zjuhuman: 115 (230 frames)
  'grid_config': [{
   'grid_dimensions': 2,
   'input_coordinate_dim': 4,
   'output_coordinate_dim': 32,
-  'resolution': [64, 64, 64, 150]
+  'resolution': [64, 64, 64, 115]
  }],
 }
