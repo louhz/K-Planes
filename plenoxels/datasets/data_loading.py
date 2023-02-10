@@ -131,7 +131,7 @@ def parallel_load_images(tqdm_title,
                          dset_type: str,
                          num_images: int,
                          **kwargs) -> List[Any]:
-    max_threads = 10
+    max_threads = 30
     if dset_type == 'llff':
         fn = _parallel_loader_llff_image
     elif dset_type == 'synthetic':
@@ -141,7 +141,7 @@ def parallel_load_images(tqdm_title,
     elif dset_type == 'video':
         fn = _parallel_loader_video
         # giac: Can increase to e.g. 10 if loading 4x subsampled images. Otherwise OOM.
-        max_threads = 8
+        max_threads =30
     else:
         raise ValueError(dset_type)
     p = Pool(min(max_threads, num_images))
