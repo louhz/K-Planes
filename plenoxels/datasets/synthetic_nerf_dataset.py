@@ -143,6 +143,7 @@ def load_360_images(frames, datadir, split, downsample) -> Tuple[torch.Tensor, t
         out_w=None,
         downsample=downsample,
     )
+    print(img_poses)
     imgs, poses = zip(*img_poses)
     imgs = torch.stack(imgs, 0)  # [N, H, W, 3/4]
     poses = torch.stack(poses, 0)  # [N, ????]
