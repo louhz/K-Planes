@@ -4,7 +4,7 @@ config = {
  'device': 'cuda:0',
 
  'data_downsample': 1.0,
- 'data_dirs': ['data/dnerf/data/zjuhuman_test'],
+ 'data_dirs': ['data/dnerf/data/trex'],
  'contract': False,
  'ndc': False,
  'isg': False,
