@@ -326,7 +326,7 @@ def fetch_360vid_info(frame: Dict[str, Any]):
     if '_r' in fp:
         timestamp = int(fp.split('t')[-1].split('_')[0])
     if 'r_' in fp:
-        pose_id = int(fp.split('r_')[-1]) - 1 # -1 for zjudataset and delete this -1 for original setting
+        pose_id = int(fp.split('r_')[-1]) 
     else:
         pose_id = int(fp.split('r')[-1])
     if timestamp is None:  # will be None for dnerf
