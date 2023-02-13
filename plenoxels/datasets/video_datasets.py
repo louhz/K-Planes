@@ -112,7 +112,8 @@ class Video360Dataset(BaseDataset):
                 timestamps = torch.linspace(0.0, 1.0, render_poses.shape[0])
                 _, transform = load_360video_frames(
                     datadir, 'train', max_cameras=self.max_cameras, max_tsteps=self.max_tsteps)
-                img_h, img_w = 800, 800
+                #img_h, img_w = 800, 800 # d-nerf
+                img_h, img_w = 662, 662 # zjudata
             else:
                 frames, transform = load_360video_frames(
                     datadir, split, max_cameras=self.max_cameras, max_tsteps=self.max_tsteps)
