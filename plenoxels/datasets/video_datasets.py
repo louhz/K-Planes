@@ -99,7 +99,7 @@ class Video360Dataset(BaseDataset):
             assert not ndc, "Synthetic video dataset does not work with NDC."
             if split == 'render':
                 num_tsteps = 120
-                dnerf_durations = {'hellwarrior': 100, 'mutant': 150, 'hook': 100, 'bouncingballs': 150, 'lego': 50, 'trex': 200, 'standup': 150, 'jumpingjacks': 200}
+                dnerf_durations = {'hellwarrior': 100, 'mutant': 150, 'hook': 100, 'bouncingballs': 150, 'lego': 50, 'trex': 200, 'standup': 150, 'jumpingjacks': 200,'zjuhuman':200}
                 for scene in dnerf_durations.keys():
                     if 'dnerf' in datadir and scene in datadir:
                         num_tsteps = dnerf_durations[scene]
