@@ -86,10 +86,10 @@ def _load_nerf_image_pose(idx: int,
     zju_to_nerf_rot =torch.Tensor( np.array([[1, 0, 0],
                             [0, 0,-1],
                             [0, 1, 0]], dtype=np.float32))
-    #pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # original
-    pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # adapt to zju
-    pose[:3, -1:] = zju_to_nerf_rot @ pose[:3, -1:]
-    pose[:3, :3] = zju_to_nerf_rot @ pose[:3, :3]
+    pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # original
+    #pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # adapt to zju
+    #pose[:3, -1:] = zju_to_nerf_rot @ pose[:3, -1:]
+    #pose[:3, :3] = zju_to_nerf_rot @ pose[:3, :3]
     
     return (img, pose)
 
