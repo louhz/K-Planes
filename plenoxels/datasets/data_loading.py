@@ -84,8 +84,14 @@ def _load_nerf_image_pose(idx: int,
 
 
     #zju is in opencv cordinate
+
+    # so we need to convert opencv to pytorch3D right now
+
+    #d-nerf is in pytorch3d cordinate
+    #the simple way from pytorch3D to opengl is multiple torch.Tensor(np.array([[-1, 0, 0, 0], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 1]]))
     #kplane is in opengl cordinate
-    #we need to tranfer the input transform matrix of zjuhuman from opencv to opengl
+    #we need to tranfer the input transform matrix of zjuhuman from opencv to pytorch3D
+    #the kplane is use (nerf cordinate)opengl
 
 
     trans2 = torch.Tensor(np.array([[1, 0, 0],
