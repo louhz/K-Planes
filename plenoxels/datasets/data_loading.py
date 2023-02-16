@@ -82,14 +82,28 @@ def _load_nerf_image_pose(idx: int,
     img = pil2tensor(img)  # [C, H, W]
     img = img.permute(1, 2, 0)  # [H, W, C]
 
+
+    #zju is in opencv cordinate
+    #kplane is in opengl cordinate
+    #we need to tranfer the input transform matrix of zjuhuman from opencv to opengl
+
+
+    trans2 = torch.Tensor(np.array([[1, 0, 0],
+                            [0, -1,0],
+                            [0, 0, -1]], dtype=np.float32))
+
+
+
+
     # to align the ground plan to x-z plane
     zju_to_nerf_rot =torch.Tensor( np.array([[1, 0, 0],
-                            [0, 0,-1],
+                            [0, 0, -1],
                             [0, 1, 0]], dtype=np.float32))
-    pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # original
-    #pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # adapt to zju
-    #pose[:3, -1:] = zju_to_nerf_rot @ pose[:3, -1:]
-    #pose[:3, :3] = zju_to_nerf_rot @ pose[:3, :3]
+    #pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # original
+    pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # adapt to zju
+    pose[:3, -1:] = trans2 @ pose[:3, -1:]
+    pose[:3, :3] =  trans2 @ pose[:3, :3]
+    pose[:3,:3]=    np.transpose(pose [:3,:3])
     
     return (img, pose)
 
