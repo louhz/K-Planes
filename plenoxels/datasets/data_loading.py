@@ -94,9 +94,9 @@ def _load_nerf_image_pose(idx: int,
     #the kplane is use (nerf cordinate)opengl
 
 
-    trans2 = torch.Tensor(np.array([[1, 0, 0],
+    trans2 = torch.Tensor(np.array([[-1, 0, 0],
                             [0, -1,0],
-                            [0, 0, -1]], dtype=np.float32))
+                            [0, 0, 1]], dtype=np.float32))
 
 
 
