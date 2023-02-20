@@ -94,9 +94,9 @@ def _load_nerf_image_pose(idx: int,
     #the kplane is use (nerf cordinate)opengl
 
 
-    trans2 = torch.Tensor(np.array([[-1, 0, 0],
+    transcv2gl = torch.Tensor(np.array([[1, 0, 0],
                             [0, -1,0],
-                            [0, 0, 1]], dtype=np.float32))
+                            [0, 0, -1]], dtype=np.float32))
 
 
 
@@ -107,9 +107,9 @@ def _load_nerf_image_pose(idx: int,
                             [0, 1, 0]], dtype=np.float32))
     #pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # original
     pose = torch.tensor(frames[idx]['transform_matrix'], dtype=torch.float32) # adapt to zju
-    pose[:3, -1:] = trans2 @ pose[:3, -1:]
-    pose[:3, :3] =  trans2 @ pose[:3, :3]
-    pose[:3,:3]=    np.transpose(pose [:3,:3])
+    pose[:3, -1:] = transcv2gl @ pose[:3, -1:]
+    #pose[:3, :3] =  transcv2gl @ pose[:3, :3]
+    #pose[:3,:3]=    np.transpose(pose [:3,:3])
     
     return (img, pose)
 
