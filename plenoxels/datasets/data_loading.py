@@ -110,7 +110,7 @@ def _load_nerf_image_pose(idx: int,
     pose[:3, -1:] = transcv2gl @ pose[:3, -1:]
     #pose[:3, :3] =  transcv2gl @ pose[:3, :3]
     #pose[:3,:3]=    np.transpose(pose [:3,:3])
-    pose = inv(pose)
+    pose = torch.tensor(inv(pose),dtype=torch.float32)
     return (img, pose)
 
 
