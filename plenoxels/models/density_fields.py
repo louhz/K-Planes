@@ -57,6 +57,7 @@ class KPlaneDensityField(nn.Module):
         else:
             pts = normalize_aabb(pts, self.aabb)
         n_rays, n_samples = pts.shape[:2]
+        # this is the merge of xyz points and time in hexplane 
         if timestamps is not None and self.hexplane:
             timestamps = timestamps[:, None].expand(-1, n_samples)[..., None]  # [n_rays, n_samples, 1]
             pts = torch.cat((pts, timestamps), dim=-1)  # [n_rays, n_samples, 4]

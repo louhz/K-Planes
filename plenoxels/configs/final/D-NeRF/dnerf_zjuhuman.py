@@ -44,8 +44,8 @@ config = {
  'use_same_proposal_network': False,
  'use_proposal_weight_anneal': True,
  'proposal_net_args_list': [
-  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [64, 64, 64, 50]},
-  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [128, 128, 128, 50]}
+  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [64, 64, 64, 100]},
+  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [128, 128, 128, 100]}
  ],
 
  # Model settings

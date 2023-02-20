@@ -104,7 +104,8 @@ class Video360Dataset(BaseDataset):
                     if 'dnerf' in datadir and scene in datadir:
                         num_tsteps = dnerf_durations[scene]
                 render_poses = torch.stack([
-                    generate_spherical_poses(angle, -30.0, 4.0)
+                    #generate_spherical_poses(angle, -30.0, 4.0) #original
+                    generate_spherical_poses(angle, -30.0, 1.5) #test
                     for angle in np.linspace(-180, 180, num_tsteps + 1)[:-1]
                 ], 0)
                 imgs = None
