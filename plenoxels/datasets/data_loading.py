@@ -11,7 +11,7 @@ from PIL import Image
 import imageio.v3 as iio
 
 from plenoxels.utils.my_tqdm import tqdm
-
+from numpy.linalg import inv
 pil2tensor = torchvision.transforms.ToTensor()
 # increase ulimit -n (number of open files) otherwise parallel loading might fail
 rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
@@ -110,7 +110,7 @@ def _load_nerf_image_pose(idx: int,
     pose[:3, -1:] = transcv2gl @ pose[:3, -1:]
     #pose[:3, :3] =  transcv2gl @ pose[:3, :3]
     #pose[:3,:3]=    np.transpose(pose [:3,:3])
-    
+    pose = inv(pose)
     return (img, pose)
 
 
