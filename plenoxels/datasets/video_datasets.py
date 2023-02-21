@@ -105,7 +105,7 @@ class Video360Dataset(BaseDataset):
                         num_tsteps = dnerf_durations[scene]
                 render_poses = torch.stack([
                     #generate_spherical_poses(angle, -30.0, 4.0) #original
-                    generate_spherical_poses(angle, -30.0, 1.5) #test
+                    generate_spherical_poses(angle, -30.0, 1.3) #test
                     for angle in np.linspace(-180, 180, num_tsteps + 1)[:-1]
                 ], 0)
                 imgs = None
@@ -125,8 +125,9 @@ class Video360Dataset(BaseDataset):
             if ndc:
                 self.per_cam_near_fars = torch.tensor([[0.0, self.ndc_far]])
             else:
-                self.per_cam_near_fars = torch.tensor([[2.0, 6.0]])
-            if "dnerf" in datadir:
+                self.per_cam_near_fars = torch.tensor([[5.0, 10.0]])
+                #self.per_cam_near_fars = torch.tensor([[2.0, 6.0]])  #default
+             if "dnerf" in datadir:
                 # dnerf time is between 0, 1. Normalize to -1, 1
                 timestamps = timestamps * 2 - 1
             else:
