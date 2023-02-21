@@ -127,6 +127,6 @@ def decompose_space_time(trainer: StaticTrainer, extra_name: str = "") -> None:
                  .numpy()
         )
 
-    out_fname = os.path.join(trainer.log_dir, f"spacetime_{extra_name}_testparameter1.mp4")
+    out_fname = os.path.join(trainer.log_dir, f"spacetime_{extra_name}.mp4")
     write_video_to_file(out_fname, frames)
     log.info(f"Saved rendering path with {len(frames)} frames to {out_fname}")

@@ -11,17 +11,17 @@ config = {
  'isg_step': -1,
  'ist_step': -1,
  'keyframes': False,
- 'scene_bbox': [[-1.3, -1.3, -1.3], [1.3, 1.3, 1.3]],
+ 'scene_bbox': [[-1.5, -1.5, -1.5], [1.5, 1.5, 1.5]],
 
  # Optimization settings
- 'num_steps': 20001,
+ 'num_steps': 30001,
  'batch_size': 4096,
  'scheduler_type': 'warmup_cosine',
  'optim_type': 'adam',
- 'lr': 0.015,
+ 'lr': 0.005,
 
  # Regularization
- 'distortion_loss_weight': 0.00,
+ 'distortion_loss_weight': 0.005,
  'histogram_loss_weight': 1.0,
  'l1_time_planes': 0.0001,
  'l1_time_planes_proposal_net': 0.0001,
@@ -31,8 +31,8 @@ config = {
  'time_smoothness_weight_proposal_net': 0.001,
 
  # Training settings
- 'valid_every': 20000,
- 'save_every': 20000,
+ 'valid_every': 30000,
+ 'save_every': 30000,
  'save_outputs': True,
  'train_fp16': True,
 
