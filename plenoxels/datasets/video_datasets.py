@@ -127,7 +127,7 @@ class Video360Dataset(BaseDataset):
             else:
                 self.per_cam_near_fars = torch.tensor([[5.0, 10.0]])
                 #self.per_cam_near_fars = torch.tensor([[2.0, 6.0]])  #default
-             if "dnerf" in datadir:
+            if "dnerf" in datadir:
                 # dnerf time is between 0, 1. Normalize to -1, 1
                 timestamps = timestamps * 2 - 1
             else:
