@@ -14,7 +14,7 @@ config = {
  'scene_bbox': [[-1.5, -1.5, -1.5], [1.5, 1.5, 1.5]],
 
  # Optimization settings
- 'num_steps': 22001,
+ 'num_steps': 32001,
  'batch_size': 4096,
  'scheduler_type': 'warmup_cosine',
  'optim_type': 'adam',
@@ -31,8 +31,8 @@ config = {
  'time_smoothness_weight_proposal_net': 0.001,
 
  # Training settings
- 'valid_every': 22000,
- 'save_every': 22000,
+ 'valid_every': 32000,
+ 'save_every': 32000,
  'save_outputs': True,
  'train_fp16': True,
 
@@ -64,7 +64,7 @@ config = {
   'grid_dimensions': 2,
   'input_coordinate_dim': 4,
   'output_coordinate_dim': 32,
- # 'resolution': [64, 64, 64, 115]
-  'resolution': [64, 64, 64, 100]
+ # 'resolution': [64, 64, 64, 100] # original
+  'resolution': [128, 128, 128, 100] # new test
  }],
 }
