@@ -86,7 +86,7 @@ def eval_video_metrics(video_path):
     print()
 
 
-dnerf_scenes = ['hellwarrior', 'mutant', 'hook', 'bouncingballs', 'lego', 'trex', 'standup', 'jumpingjacks','zjuhuman']
+dnerf_scenes = ['hellwarrior', 'mutant', 'hook', 'bouncingballs', 'lego', 'trex', 'standup', 'jumpingjacks','zjuhuman','zjuhuman_387']
 types = ['linear', 'mlp']
 
 if __name__ == "__main__":

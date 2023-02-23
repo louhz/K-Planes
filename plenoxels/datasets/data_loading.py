@@ -65,8 +65,8 @@ def _load_nerf_image_pose(idx: int,
     # Fix file-path
     f_path = os.path.join(data_dir, frames[idx]['file_path'])
     if '.' not in os.path.basename(f_path):
-        f_path += '.jpg'  # so silly... for zju-data
-        #f_path += '.png'  # so silly... for d-nerf
+        #f_path += '.jpg'  # so silly... for zju-data w/o mask
+        f_path += '.png'  # so silly... for d-nerf and zju-data with mask
     if not os.path.exists(f_path):  # there are non-exist paths in fox...
         return None
     img = Image.open(f_path)
