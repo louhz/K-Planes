@@ -105,7 +105,7 @@ class Video360Dataset(BaseDataset):
                         num_tsteps = dnerf_durations[scene]
                 render_poses = torch.stack([
                     #generate_spherical_poses(angle, -30.0, 4.0) #original
-                    generate_spherical_poses(angle, -30.0, 1.3) #test
+                    generate_spherical_poses(angle, -30.0, 6.0) #test
                     for angle in np.linspace(-180, 180, num_tsteps + 1)[:-1]
                 ], 0)
                 imgs = None
@@ -315,11 +315,13 @@ def get_bbox(datadir: str, dset_type: str, is_contracted=False) -> torch.Tensor:
     if is_contracted:
         radius = 2
     elif dset_type == 'synthetic':
-        radius = 1.5
+        # radius = 1.5
+        radius = 6
     elif dset_type == 'llff':
         return torch.tensor([[-3.0, -1.67, -1.2], [3.0, 1.67, 1.2]])
     else:
-        radius = 1.3
+        # radius = 1.3
+        radius = 6
     return torch.tensor([[-radius, -radius, -radius], [radius, radius, radius]])
 
 

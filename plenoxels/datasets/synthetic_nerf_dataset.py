@@ -72,7 +72,8 @@ class SyntheticNerfDataset(BaseDataset):
             pixels = pixels[:, :3] * pixels[:, 3:] + bg_color * (1.0 - pixels[:, 3:])
         out["imgs"] = pixels
         out["bg_color"] = bg_color
-        out["near_fars"] = torch.tensor([[2.0, 6.0]])
+        out["near_fars"] = torch.tensor([[5.0, 7.5]])
+        #out["near_fars"] = torch.tensor([[2.0, 6.0]]) # original
         return out
 
 
@@ -82,7 +83,7 @@ def get_360_bbox(datadir, is_contracted=False):
     elif "ship" in datadir:
         radius = 1.5
     else:
-        radius = 1.5 #edit parameter
+        radius = 6 #edit parameter
         #radius = 1.3 # original  
     return torch.tensor([[-radius, -radius, -radius], [radius, radius, radius]])
 
