@@ -14,7 +14,7 @@ config = {
  'scene_bbox': [[-6, -6, -6], [6, 6, 6]],
 
  # Optimization settings
- 'num_steps': 32001,
+ 'num_steps': 33001,
  'batch_size': 4096,
  'scheduler_type': 'warmup_cosine',
  'optim_type': 'adam',
@@ -31,8 +31,8 @@ config = {
  'time_smoothness_weight_proposal_net': 0.001,
 
  # Training settings
- 'valid_every': 32000,
- 'save_every': 32000,
+ 'valid_every': 33000,
+ 'save_every': 33000,
  'save_outputs': True,
  'train_fp16': True,
 
