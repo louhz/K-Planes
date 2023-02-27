@@ -83,7 +83,7 @@ def get_360_bbox(datadir, is_contracted=False):
     elif "ship" in datadir:
         radius = 1.5
     else:
-        radius = 6 #edit parameter
+        radius = 5.5 #edit parameter
         #radius = 1.3 # original  
     return torch.tensor([[-radius, -radius, -radius], [radius, radius, radius]])
 

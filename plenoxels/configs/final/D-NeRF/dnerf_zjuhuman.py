@@ -11,7 +11,7 @@ config = {
  'isg_step': -1,
  'ist_step': -1,
  'keyframes': False,
- 'scene_bbox': [[-6, -6, -6], [6, 6, 6]],
+ 'scene_bbox': [[-5.5, -5.5, -5.5], [5.5, 5.5, 5.5]],
 
  # Optimization settings
  'num_steps': 29001,
@@ -23,8 +23,8 @@ config = {
  # Regularization
  'distortion_loss_weight': 0.008,
  'histogram_loss_weight': 1.0,
- 'l1_time_planes': 0.0001,
- 'l1_time_planes_proposal_net': 0.0001,
+ 'l1_time_planes': 0.0005,
+ 'l1_time_planes_proposal_net': 0.0005,
  'plane_tv_weight': 0.0001,
  'plane_tv_weight_proposal_net': 0.0001,
  'time_smoothness_weight': 0.1,
@@ -44,8 +44,8 @@ config = {
  'use_same_proposal_network': False,
  'use_proposal_weight_anneal': True,
  'proposal_net_args_list': [
-  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [64, 64, 64, 100]},
-  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [128, 128, 128, 100]}
+  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [128, 128, 128, 100]},
+  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [256, 256, 256, 100]}
  ],
 
  # Model settings
@@ -65,6 +65,6 @@ config = {
   'input_coordinate_dim': 4,
   'output_coordinate_dim': 32,
  # 'resolution': [64, 64, 64, 100] # original
-  'resolution': [128, 128, 128, 100] # new test
+  'resolution': [256, 256, 256, 100] # new test
  }],
 }
