@@ -14,7 +14,7 @@ config = {
  'scene_bbox': [[-5.5, -5.5, -5.5], [5.5, 5.5, 5.5]],
 
  # Optimization settings
- 'num_steps': 29001,
+ 'num_steps': 28001,
  'batch_size': 4096,
  'scheduler_type': 'warmup_cosine',
  'optim_type': 'adam',
@@ -31,8 +31,8 @@ config = {
  'time_smoothness_weight_proposal_net': 0.001,
 
  # Training settings
- 'valid_every': 29000,
- 'save_every': 29000,
+ 'valid_every': 28000,
+ 'save_every': 28000,
  'save_outputs': True,
  'train_fp16': True,
 
@@ -44,8 +44,8 @@ config = {
  'use_same_proposal_network': False,
  'use_proposal_weight_anneal': True,
  'proposal_net_args_list': [
-  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [128, 128, 128, 100]},
-  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [256, 256, 256, 100]}
+  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [64, 64, 64, 100]},
+  {'num_input_coords': 4, 'num_output_coords': 8, 'resolution': [128, 128, 128, 100]}
  ],
 
  # Model settings
@@ -65,6 +65,6 @@ config = {
   'input_coordinate_dim': 4,
   'output_coordinate_dim': 32,
  # 'resolution': [64, 64, 64, 100] # original
-  'resolution': [256, 256, 256, 100] # new test
+  'resolution': [128, 128, 128, 100] # new test
  }],
 }
