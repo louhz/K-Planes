@@ -4,7 +4,7 @@ config = {
  'device': 'cuda:0',
 
  'data_downsample': 1,
- 'data_dirs': ['data/phototourism/brandenburg_gate'],
+ 'data_dirs': ['data/brandenburg_gate'],
  'contract': True,
  'ndc': False,
  'scene_bbox': [[-2.0, -2.0, -2.0], [2.0, 2.0, 2.0]],
