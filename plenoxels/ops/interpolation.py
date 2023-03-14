@@ -42,11 +42,11 @@ def grid_sample_wrapper_trilinear(grid: torch.Tensor, coords: torch.Tensor, alig
     if coords.dim() == 2:
         coords = coords.unsqueeze(0)
 
-    if grid_dim == 2 or grid_dim == 3:
+    if grid_dim == 5:
         grid_sampler = F.grid_sample
     else:
         raise NotImplementedError(f"Grid-sample was called with {grid_dim}D data but is only "
-                                  f"implemented for 2 and 3D data.")
+                                  f"implemented for 5D data.")
 
     coords = coords.view([coords.shape[0]] + [1] * (grid_dim - 1) + list(coords.shape[1:]))
     B, feature_dim = grid.shape[:2]
@@ -55,7 +55,7 @@ def grid_sample_wrapper_trilinear(grid: torch.Tensor, coords: torch.Tensor, alig
         grid,  # [B, feature_dim, reso, ...]
         coords,  # [B, 1, ..., n, grid_dim]
         align_corners=align_corners,
-        mode='bilinear', padding_mode='border')
+        mode='trilinear', padding_mode='border')
     interp = interp.view(B, feature_dim, n).transpose(-1, -2)  # [B, n, feature_dim]
     interp = interp.squeeze()  # [B?, n, feature_dim?]
     return interp
